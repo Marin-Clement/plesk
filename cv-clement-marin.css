@@ -1,0 +1,296 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap');
+a{
+  text-decoration: none;
+}
+body{
+    font-family: 'Ubuntu', sans-serif;
+    background-color: #000000;
+    color: white;
+}
+#main{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+}
+#profile-picture{
+    margin-left: 25px;
+    z-index: 200;
+    position: absolute;
+    display: block;
+    height: 200px;
+    width: 200px;
+    border-radius: 1000px;
+    transition: 0.2s;
+}
+#profile-picture:hover{
+    animation: shake 1s;
+    cursor: pointer;
+}
+#info{
+    margin-left: 35px;
+    margin-top: 50px;
+    height: 780px;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    grid-area: 1 / 1 / 6 / 1;
+}
+#core{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    grid-area: 1 / 2 / 6 / 6;
+}
+#profile{
+    margin-top: 20px;
+    margin-left: 50px;
+    grid-area: 1 / 1 / 2 / 2;
+}
+#profile-info{
+    margin-top: 250px;
+    grid-area: 2 / 1 / 3 / 2;
+}
+#skills{
+    grid-area: 3 / 1 / 4 / 2;
+}
+#lang{
+    grid-area: 4 / 1 / 5 / 2;
+}
+#experience{
+    grid-area: 1 / 1 / 2 / 2;
+    margin-left: 30px;
+}
+#school{
+    grid-area: 2 / 1 / 3 / 2;
+    margin-left: 30px;
+}
+.circle {
+    margin-left: 25px;
+    z-index: 100;
+    border-radius: 50%;
+    background-color: rgb(255, 255, 255);
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    opacity: 0;
+    animation: scaleIn 4s infinite cubic-bezier(.36, .11, .89, .32);
+}
+@keyframes scaleIn {
+    from {
+      transform: scale(0.5, 0.5);
+      opacity: .5;
+    }
+    to {
+      transform: scale(2.1, 2.1);
+      opacity: 0;
+    }
+}
+.separation{
+    display: block;
+    margin-left: 50px;
+    margin-bottom: 30px;
+    margin-top: 30px;
+    border-radius: 200px;
+    content: "";
+    width: 250px;
+    height: 10px;
+    position: relative;
+    background-image: linear-gradient(135deg, #000000 0%, #000000 5%, #000000 15%, #000000 50%, #ffffff 100%);
+    background-size: 400% 400%;
+    box-shadow: 0px 0px 25px 2px rgba(255, 255, 255, 0.379);
+    animation: gradient 10s normal infinite;
+    transition: 0.3s;
+}
+.profile-text{
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.425);
+    font-size: 20px;
+    font-weight: bold;
+    margin: 5px;
+    margin-left: 20px;
+    padding: none;
+    transition: 0.3s;
+}
+.profile-titletext{
+  text-decoration: none;
+  color: rgba(228, 170, 255, 0.856);
+  font-size: 20px;
+  font-weight: bold;
+  margin: 5px;
+  margin-left: 0px;
+  padding: none;
+  transition: 0.3s;
+}
+.profile-titletext:hover{
+  font-size: 25px;
+  margin-left: 25px;
+  cursor:pointer;
+  color: rgba(241, 211, 255, 0.856);
+  text-shadow: 0 0 10px rgba(228, 170, 255, 0.856),
+               0 0 20px rgba(228, 170, 255, 0.856), 
+               0 0 40px rgba(228, 170, 255, 0.856);
+}
+.profile-text:hover{
+    font-size: 25px;
+    margin-left: 25px;
+    cursor:pointer;
+    color: #fff;
+    text-shadow: 0 0 10px #fff,
+                 0 0 20px #fff, 
+                 0 0 40px #fff;
+}
+.profile-bigtitle{
+  text-decoration: none;
+  color: rgba(255, 217, 136, 0.856);
+  font-size: 30px;
+  font-weight: bold;
+  margin: 5px;
+  margin-left: 0px;
+  padding: none;
+  transition: 0.3s;
+}
+.profile-bigtitle:hover{
+  cursor:default;
+  color: rgba(255, 217, 136, 0.856);
+  text-shadow: 0 0 10px rgba(255, 217, 136, 0.856),
+               0 0 20px rgba(255, 217, 136, 0.856), 
+               0 0 40px rgba(255, 217, 136, 0.856);
+}
+.progress {
+    margin-bottom: 10px;
+    margin-top: 10px;
+    background: rgba(255,255,255,0.1);
+    justify-content: flex-start;
+    border-radius: 100px;
+    align-items: center;
+    position: relative;
+    padding: 0 5px;
+    display: flex;
+    height: 30px;
+    width: 290px; 
+    transition: 0.2s;
+  }
+  .flex{
+    display: flex;
+    flex-direction: row;
+  }
+  .progress-value {
+    box-shadow: 10px 10px 40px -8px rgb(255, 255, 255);
+    border-radius: 100px;
+    background: rgb(255, 255, 255);
+    height: 20px;
+    width: 0;
+    transition: 0.2s;
+  }
+.progress:hover{
+    transform: scale(0.95);
+}
+  @keyframes C {
+    0% { width: 0;}
+    33% { width: 15%;
+    background: rgb(255, 255, 255)}
+    100% { width: 70%;
+    background-color: rgb(107, 213, 255);}
+  }
+  @keyframes unity {
+    0% { width: 0;}
+    33% { width: 22%;
+    background: rgb(255, 255, 255)}
+    100% { width: 80%;
+    background-color: rgb(211, 211, 211);}
+  }
+  @keyframes html {
+    0% { width: 0;}
+    33% { width: 19%;
+    background: rgb(255, 255, 255)}
+    100% { width: 60%;
+    background-color: rgb(255, 143, 44);}
+  }
+  @keyframes css {
+    0% { width: 0;}
+    33% { width: 24%;
+    background: rgb(255, 255, 255)}
+    100% { width: 65%;
+    background-color: rgb(55, 128, 255);}
+  }
+.logo{
+    width: 35px; 
+    margin: 5px;
+    padding: 5px;
+    border-radius: 15px;
+    background-color: white;
+    transition: 0.2s;
+}
+.logo:hover{
+    transform: scale(1.3);
+}
+@keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+.mid-separation{
+    grid-area: 1 / 1 / 6 / 6;
+    display: block;
+    border-radius: 200px;
+    width: 10px;
+    height: 900px;
+    position: relative;
+    background-image: linear-gradient(220deg, #000000 0%, #000000 5%, #000000 15%, #ffffff 50%, #ffffff 100%);
+    box-shadow: 0px 0px 25px 2px rgba(255, 255, 255, 0.379);
+    background-size: 400% 400%;
+    animation: gradient 10s normal infinite;
+}
+.animate-title
+{
+  margin-top: 0 px;
+  text-transform: uppercase;
+  background-image: linear-gradient(
+    -225deg,
+    #00000050 0%,
+    #ffffff 29%,
+    #57575788 67%,
+    #00000073 100%
+  );
+  background-size: auto auto;
+  background-clip: border-box;
+  background-size: 200% auto;
+  color: #fff;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 5s linear infinite;
+  display: inline-block;
+      font-size: 30px;
+  transition: 0.3s;
+}
+.animate-title:hover{
+  cursor: default;
+}
+@keyframes textclip {
+    to {
+      background-position: 200% center;
+    }
+ }
+ @keyframes gradient {
+	0% {
+		background-image: 0% 50%;
+    box-shadow: 0px 0px 25px 2px rgba(0, 0, 0, 0.342);
+	}
+	50% {
+		background-position: 100% 50%;
+    box-shadow: 0px 0px 25px 2px rgba(255, 255, 255, 0.705);
+	}
+	100% {
+		background-image: 0% 50%;
+    box-shadow: 0px 0px 25px 2px rgba(0, 0, 0, 0.379);
+	}
+}
